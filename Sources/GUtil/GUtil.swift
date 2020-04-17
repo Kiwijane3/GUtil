@@ -1,10 +1,10 @@
 public struct GPoint {
 	
-	public let x: Double;
+	public var x: Double;
 	
-	public let y: Double;
+	public var y: Double;
 	
-	public static zero = GPoint(x: 0, y: 0);
+	public static let zero = GPoint(x: 0, y: 0);
 	
 	public init(x: Double, y: Double) {
 		self.x = x;
@@ -15,9 +15,9 @@ public struct GPoint {
 
 public struct GSize {
 
-	public let width: Double;
+	public var width: Double;
 	
-	public let height: Double;
+	public var height: Double;
 
 	public static let zero = GSize(width: 0, height: 0);
 	
@@ -30,11 +30,11 @@ public struct GSize {
 
 public struct GRect {
 	
-	public let origin: GPoint;
+	public var origin: GPoint;
 	
-	public let size: GSize
+	public var size: GSize;
 	
-	public let zero = GRect(origin: .zero, size: .zero);
+	public static let zero = GRect(origin: GPoint.zero, size: GSize.zero);
 	
 	public init(origin: GPoint, size: GSize) {
 		self.origin = origin;
@@ -50,13 +50,13 @@ public struct GRect {
 
 public struct GColor {
 	
-	public let r: Double;
+	public var r: Double;
 	
-	public let g: Double;
+	public var g: Double;
 	
-	public let b: Double;
+	public var b: Double;
 	
-	public let a: Double;
+	public var a: Double;
 	
 	public init(r: Double, g: Double, b: Double, a: Double = 1.0) {
 		self.r = r;
