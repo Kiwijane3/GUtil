@@ -4,6 +4,8 @@ public struct GPoint {
 	
 	public let y: Double;
 	
+	public static zero = GPoint(x: 0, y: 0);
+	
 	public init(x: Double, y: Double) {
 		self.x = x;
 		self.y = y;
@@ -16,6 +18,8 @@ public struct GSize {
 	public let width: Double;
 	
 	public let height: Double;
+
+	public static let zero = GSize(width: 0, height: 0);
 	
 	public init(width: Double, height: Double) {
 		self.width = width;
@@ -29,6 +33,8 @@ public struct GRect {
 	public let origin: GPoint;
 	
 	public let size: GSize
+	
+	public let zero = GRect(origin: .zero, size: .zero);
 	
 	public init(origin: GPoint, size: GSize) {
 		self.origin = origin;
