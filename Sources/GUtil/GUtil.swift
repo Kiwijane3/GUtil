@@ -1,27 +1,62 @@
-public typealias Point = (x: Double, y: Double);
-
-public typealias Size = (width: Double, height: Double);
-
-public typealias Rect = (origin: Point, size: Size);
-
-public typealias Color = (r: Double, g: Double, b: Double, a: Double);
-
-public func point(x: Double, y: Double) -> Point {
-	return (x: x, y: y);
+public struct GPoint {
+	
+	public let x: Double;
+	
+	public let y: Double;
+	
+	public init(x: Double, y: Double) {
+		self.x = x;
+		self.y = y;
+	}
+	
 }
 
-public func size(width: Double, height: Double) -> Size {
-	return (width: width, height: height);
+public struct GSize {
+
+	public let width: Double;
+	
+	public let height: Double;
+	
+	public init(width: Double, height: Double) {
+		self.width = width;
+		self.height = height;
+	}
+	
 }
 
-public func rect(origin: Point, size: Size) -> Rect {
-	return (origin: origin, size: size);
+public struct GRect {
+	
+	public let origin: GPoint;
+	
+	public let size: GSize
+	
+	public init(origin: GPoint, size: GSize) {
+		self.origin = origin;
+		self.size = size;
+	}
+	
+	public init(x: Double, y: Double, width: Double, height: Double) {
+		self.origin = GPoint(x: x, y: y);
+		self.size = GSize(width: width, height: height);
+	}
+	
 }
 
-public func rect(x: Double, y: Double, width: Double, height: Double) -> Rect {
-	return (origin: point(x: x, y: y), size: size(width: width, height: height));
-}
-
-public func color(r: Double, g: Double, b: Double, a: Double = 1.0) -> Color {
-	return (r: r, g: g, b: b, a: a);
+public struct GColor {
+	
+	public let r: Double;
+	
+	public let g: Double;
+	
+	public let b: Double;
+	
+	public let a: Double;
+	
+	public init(r: Double, g: Double, b: Double, a: Double = 1.0) {
+		self.r = r;
+		self.g = g;
+		self.b = b;
+		self.a = a;
+	}
+	
 }
